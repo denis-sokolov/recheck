@@ -15,5 +15,5 @@ It takes a RegExp pattern source and flags, and returns the analysis result.</p>
 You can use <code>ReDoS.check</code> method to analyze RegExp pattern.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=color:#66d9ef>import</span> codes.quine.labo.redos.ReDoS
 
 println<span style=color:#f92672>(</span><span style=color:#a6e22e>ReDoS</span><span style=color:#f92672>.</span>check<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;^(a|a)*$&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>))</span>
-<span style=color:#75715e>// Success(Exponential(Witness(List((List([a]),List([a]))),List([\x00-`b-\uFFFF]))))
+<span style=color:#75715e>// Vulnerable(List([a], [a], [a], [a], [a], [a], [a], [a], [a], [\x00-`b-\uFFFF]),Some(Exponential(Witness(List((List([a]),List([a]))),List([\x00-`b-\uFFFF])))))
 </span></code></pre></div></div></div></main><footer class=footer><div class="content has-text-centered"><p>2020 (C) TSUYUSATO "MakeNowJust" Kitsune</p></div></footer></body></html>
