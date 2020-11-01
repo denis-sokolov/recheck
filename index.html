@@ -5,7 +5,7 @@ It takes a RegExp pattern source and flags, and returns the analysis result.</p>
 <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>check</span>(<span style=color:#e6db74>&#39;^(a|a)*$&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>));
 <span style=color:#75715e>// {
 </span><span style=color:#75715e>//   status: &#39;vulnerable&#39;,
-</span><span style=color:#75715e>//   attack: &#39;aaaaaaaaa\x00&#39;,
+</span><span style=color:#75715e>//   attack: &#39;aaaaaaaaaaaaaaaaaaaaaaaaaaa\x00&#39;,
 </span><span style=color:#75715e>//   complexity: {
 </span><span style=color:#75715e>//     type: &#39;exponential&#39;,
 </span><span style=color:#75715e>//     witness: { pumps: [ { prefix: &#39;a&#39;, pump: &#39;a&#39; } ], suffix: &#39;\x00&#39; }
