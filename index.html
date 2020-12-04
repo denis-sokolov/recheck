@@ -8,6 +8,7 @@ It takes a RegExp pattern source and flags, and returns the analysis result.</p>
 <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>check</span>(<span style=color:#e6db74>&#34;^(a|a)*$&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>));
 <span style=color:#75715e>// {
 </span><span style=color:#75715e>//   status: &#39;vulnerable&#39;,
+</span><span style=color:#75715e>//   used: &#39;automaton&#39;,
 </span><span style=color:#75715e>//   attack: &#39;aaaaaaaaaaaaaaaaaaaaa\x00&#39;,
 </span><span style=color:#75715e>//   complexity: {
 </span><span style=color:#75715e>//     type: &#39;exponential&#39;,
