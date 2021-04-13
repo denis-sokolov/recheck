@@ -1,0 +1,7 @@
+(()=>{var workerJS="https://makenowjust-labo.github.io/recheck/worker.min.b6b1c85ea12c0a03b7b87604250ff01c56562d1b9c6cd776b52496ae6e7024b1.js";var worker=(()=>{let webWorker=null;return{run(checker,input){if(webWorker===null){webWorker=new Worker(workerJS);}
+webWorker.postMessage({checker,input});return new Promise((resolve)=>{const handle=(e)=>{resolve(e.data);webWorker.removeEventListener("message",handle);};webWorker.addEventListener("message",handle);});},cancel(){if(webWorker===null)
+return;webWorker.terminate();webWorker=null;}};})();window.checker=()=>({state:"init",input:"/^(a|a)*$/",checker:"hybrid",checkedInput:"",checkedTime:0,checkedResult:null,async check(){if(this.state==="checking")
+return;this.state="checking";this.checkedInput="";this.checkedTime=0;this.checkedResult=null;const input=this.input;const startTime=Date.now();const result=await worker.run(this.checker,input);const checkedTime=Date.now()-startTime;this.state="checked";this.checkedInput=input;this.checkedTime=checkedTime;this.checkedResult=result;},cancel(){this.state="init";this.checkedInput="";this.checkedTime=0;this.checkedResult=null;worker.cancel();},get checkedHotspot(){const input=this.checkedResult.source;let index=0;const parts=[];for(const{start,end,temperature}of this.checkedResult.hotspot){if(index<start)
+parts.push({text:input.substring(index,start)});parts.push({text:input.substring(start,end),temperature});index=end;}
+if(index<input.length)
+parts.push({text:input.substring(index)});return parts;}});})();
