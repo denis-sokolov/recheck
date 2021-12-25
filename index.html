@@ -139,7 +139,7 @@ fuzz
 </div>
 </div>
 </header>
-<script src=https://makenowjust-labo.github.io/recheck/main.min.cf0030c5d764bdc780341a216655dc62ec3cdc8a8e42d69f39ef11ecfe374d21.js></script>
+<script src=https://makenowjust-labo.github.io/recheck/main.min.e5ef47342051cb27bae5359ba253af1561669887a0315ce1175c113841914c4c.js></script>
 <section class=section>
 <div class=container>
 <div class="item columns">
@@ -185,8 +185,8 @@ It takes a RegExp pattern source and flags, and returns the analysis result.</p>
 </span><span style=color:#75715e>//     pumps: [ { prefix: &#39;a&#39;, pump: &#39;a&#39;, bias: 0 } ],
 </span><span style=color:#75715e>//     suffix: &#39;\x00&#39;,
 </span><span style=color:#75715e>//     base: 17,
-</span><span style=color:#75715e>//     string: &#39;aaaaaaaaaaaaaaaaaa\x00&#39;,
-</span><span style=color:#75715e>//     pattern: &#34;&#39;a&#39; &#39;a&#39;¹⁷ &#39;\\x00&#39;&#34;
+</span><span style=color:#75715e>//     string: &#39;aaaaaaaaaaaaaaaaaaaaaaaaaaa\x00&#39;,
+</span><span style=color:#75715e>//     pattern: &#34;&#39;a&#39; + &#39;a&#39;.repeat(27) + &#39;\\x00&#39;&#34;
 </span><span style=color:#75715e>//   },
 </span><span style=color:#75715e>//   complexity: { type: &#39;exponential&#39;, summary: &#39;exponential&#39;, isFuzz: false }
 </span><span style=color:#75715e>// }
@@ -202,7 +202,7 @@ println<span style=color:#f92672>(</span><span style=color:#a6e22e>ReDoS</span><
 <span style=color:#75715e>// Input        : /^(a|a)*$/
 </span><span style=color:#75715e>// Status       : vulnerable
 </span><span style=color:#75715e>// Complexity   : exponential
-</span><span style=color:#75715e>// Attack string: &#39;a&#39; &#39;a&#39;³⁰ &#39;\x00&#39;
+</span><span style=color:#75715e>// Attack string: &#39;a&#39; + &#39;a&#39;.repeat(30) + &#39;\x00&#39;
 </span><span style=color:#75715e>// Hotspot      : /^([41ma[0m|[41ma[0m)*$/
 </span><span style=color:#75715e>// Checker      : automaton
 </span></code></pre></div><h2 id=license>License</h2>
