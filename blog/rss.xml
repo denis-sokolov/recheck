@@ -4,10 +4,24 @@
         <title>recheck Blog</title>
         <link>https://makenowjust-labs.github.io/recheck/blog</link>
         <description>recheck Blog</description>
-        <lastBuildDate>Fri, 04 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[recheck v4.4.0]]></title>
+            <link>https://makenowjust-labs.github.io/recheck/blog/2022/05/17/release-v4.4.0</link>
+            <guid>/2022/05/17/release-v4.4.0</guid>
+            <pubDate>Tue, 17 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[recheck v4.4.0 is released]]></description>
+            <content:encoded><![CDATA[<p>Here, we announce the new release of recheck v4.4.0.</p><p>You could see <a href="https://github.com/makenowjust-labs/recheck/releases/tag/v4.4.0" target="_blank" rel="noopener noreferrer">the complete CHANGELOG</a> for detailed informations.</p><h1>Changes</h1><h2 class="anchor anchorWithStickyNavbar_YDjN" id="allow-all-parameters-to-eslint-plugin-options">Allow all parameters to ESLint plugin options<a class="hash-link" href="#allow-all-parameters-to-eslint-plugin-options" title="Direct link to heading">​</a></h2><p>Now, the ESLint plugin accepts all parameters.</p><p>It is useful for detailed behavior of the checker.
+For instance, when the system is busy, the fuzz checker reports a false positive by its timeout (See <a href="https://github.com/makenowjust-labs/recheck/issues/447" target="_blank" rel="noopener noreferrer">#447</a>, thanks <a href="https://github.com/falsandtru" target="_blank" rel="noopener noreferrer">@falsandtru</a>).
+We can prevent this by specifying <code>attackTimeout</code> to <code>null</code> (disabling timeout on the attack phase).</p><h1>Fixes</h1><h2 class="anchor anchorWithStickyNavbar_YDjN" id="fix-zero-width-assertion-in-automaton-checker">Fix zero-width assertion in automaton checker<a class="hash-link" href="#fix-zero-width-assertion-in-automaton-checker" title="Direct link to heading">​</a></h2><p>In the past, next character kinds are omitted after refining a transition, so it equates two states which should be distinguish.
+This fix makes it to include next character kind in state.</p><p>Now, we can check <code>/^.+?aa[^@]@/</code> correctly.</p><h2 class="anchor anchorWithStickyNavbar_YDjN" id="correct-to-increase-steps-on-back-reference">Correct to increase steps on back-reference<a class="hash-link" href="#correct-to-increase-steps-on-back-reference" title="Direct link to heading">​</a></h2><p>In the past, since the back-reference increases step at one, the checker may estimate a lower complexity than actual.
+The step should be increased by the length of the read string, and has been corrected as such.</p><p>Now, we can check <code>/^(.+)\1$/</code> correctly.</p><h1>P.S.</h1><p>We apologize you to delay for release the next major version.
+I have a few time to develop recheck recently, but we are preparing <a href="https://github.com/makenowjust-labs/recheck/pull/378" target="_blank" rel="noopener noreferrer">a big patch for the next major version</a>.
+Please look forward it!</p><p>Thank you for your interesting!</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[recheck v4.3.0]]></title>
             <link>https://makenowjust-labs.github.io/recheck/blog/2022/02/04/release-v4.3.0</link>
